@@ -1,0 +1,105 @@
+formas de usar if nessa bosta.
+
+<%= msg ? "Isso é uma msg de erro" : "nenhum erro!" %>
+
+<% if(msg == true) { %>
+        
+    <h3>Isso é uma menssagem de erro.</h3>
+    <%} else { %>
+    <h3>Nenhum erro</h3>
+    <%}%>
+
+
+# forEatch
+
+<% produtos.forEach(function(produto) { %>
+        <%= produto.nome %>
+        <%= produto.preco %>
+     <% }) %>    
+
+
+
+<% produtos.forEach(function(produto) { %>
+        <hr>
+        <h3><%= produto.nome %></3>
+        <h4><%= produto.preco %></h4>
+     <% }) %>    
+
+
+
+
+     Base que estudamos
+
+     const express = require("express");
+const app = express();
+
+// estou dizendo para o express usa o EJS como vizualizador.
+app.set('view engine', 'ejs');
+
+app.get("/:nome/:lang", (req, res) => {
+    var nome = req.params.nome;
+    var lang = req.params.lang;
+    var exibirMsg = true;
+
+    var produtos = [
+        {nome: "Doritos", preco: 10.5},
+        {nome: "Coca Retornavel", preco: 5.99},
+        {nome: "Leite", preco: 4.5},
+        {nome: "Carne", preco: 28},
+        {nome: "RedBull", preco: 13},
+        {nome: "Nescal", preco: 8.9},
+    ]
+
+    res.render("index", {
+        nome: nome,
+        lang: lang,
+        empresa: "Reis dos sofwares",
+        msg: exibirMsg,
+        produtos: produtos
+    });
+});
+
+app.listen(8080,()=> (console.log("app rodando")));
+
+
+
+
+
+
+
+
+ #Html
+
+ <img class="img" src="/img/img1.jpg">
+
+    <h1>Guia de pergunstas</h1>
+    <hr>
+    <h1>Lista de perguntas</h1>
+
+    <p> Nome: <%= nome %> </p>
+    <p> Linguagem: <%= lang %> </p>
+    <p> Empresa: <%= empresa %> </p>
+
+    <% if(msg == true) { %>
+    <h3>Isso é uma menssagem de erro.</h3>
+    <%}%>
+
+    <% produtos.forEach(function(produto) { %>
+        <hr>
+        <h3><%= produto.nome %></3>
+        <h4><%= produto.preco %></h4>
+     <% }) %>    
+    
+
+    #alterar cores do butao
+
+    <button class="btn btn-success">Perguntar</button> verde
+    <button class="btn btn-primary">Perguntar</button> azul
+    <button class="btn btn-danger">Perguntar</button> vermelho
+    <button class="btn btn-warning">Perguntar</button> amarelo
+
+
+#formulario-perguntas {
+    porcentagem da tela
+    margin-top: 5vh;
+}
