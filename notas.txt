@@ -103,3 +103,7 @@ app.listen(8080,()=> (console.log("app rodando")));
     porcentagem da tela
     margin-top: 5vh;
 }
+
+se a conexao do my sql nao funcionar 
+comando no workbench
+ALTER USER 'root'@'localhost' IDENTIFIED mysql_native_password BY '123456'
