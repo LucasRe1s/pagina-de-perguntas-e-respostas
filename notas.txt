@@ -107,3 +107,26 @@ app.listen(8080,()=> (console.log("app rodando")));
 se a conexao do my sql nao funcionar 
 comando no workbench
 ALTER USER 'root'@'localhost' IDENTIFIED mysql_native_password BY '123456'
+
+
+ res.findAll()
+    // e a msm coisa que select all * from perguntas
+
+
+allowNull: false // campo nao pode ser vazio.
+
+
+// relacionamentoo um pra um entre tabelas
+// estruturação da tabela
+const Respostas = connection.define('respostas', {
+    corpo: {
+        type: sequelize.STRING,
+        allowNull: false
+    },
+    perguntaId: {
+        type: sequelize.INTEGER,
+        allowNull: false
+    }
+});
+
+Body-parser converter formatos de texto

@@ -2,6 +2,7 @@ const sequelize = require('sequelize');
 const connection = require('./database');
 
 // estruturação da tabela
+const Perguntas = connection.define('perguntas', {
     titulo: {
         type: sequelize.STRING,
         allowNull: false
@@ -13,6 +14,7 @@ const connection = require('./database');
 });
 
 //criação da tabela
+Perguntas.sync({force: false}).then(() => {});
 
 //Model é uma representação da sua tabela feita em codigo js.
-module.exports = Pergunta;
+module.exports = Perguntas;
